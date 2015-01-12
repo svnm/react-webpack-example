@@ -4,7 +4,6 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
-var wiredep = require('wiredep');
 
 module.exports = yeoman.generators.Base.extend({
   constructor: function () {
@@ -36,7 +35,7 @@ module.exports = yeoman.generators.Base.extend({
     this.pkg = require('../package.json');
 
     if (!this.options['skip-welcome-message']) {
-      this.log(yosay('Welcome to the Gulp app generator! Out of the box I include Bootstrap, HTML5 Boilerplate, Modernizr, jQuery and and a gulpfile.js to build your app.'));
+      this.log(yosay('Welcome to the Gulp React app generator! Out of the box I include CSS Skeleton, jQuery, React and and a gulpfile.js to build your app.'));
     }
   },
 
@@ -62,27 +61,6 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this));
   },
   
-  moduleLoader: function() {
-    var cb = this.async();
-
-    var prompts = [{
-      type: 'list',
-      name: 'moduleLoader',
-      message: 'Which module loader would you like to include?',
-      choices: [{
-        name: 'Requirejs',
-        value: 'requirejs'
-      }, {
-        name: 'Browserify',
-        value: 'browserify'
-      }]
-    }];
-
-    this.prompt(prompts, function(props) {
-      this.moduleLoader = props.moduleLoader;
-      cb();
-    }.bind(this));
-  },
 
   writing: {
     gulpfile: function() {
@@ -95,10 +73,6 @@ module.exports = yeoman.generators.Base.extend({
 
     git: function() {
       this.copy('gitignore', '.gitignore');
-    },
-
-    bower: function() {
-      this.copy('_bower.json', 'bower.json');
     },
 
     jshint: function () {
@@ -138,13 +112,17 @@ module.exports = yeoman.generators.Base.extend({
     app: function () {
       this.mkdir('app');
       this.mkdir('app/scripts');
+      this.mkdir('app/scripts/templates');
       this.mkdir('app/styles');
       this.mkdir('app/fonts');
       this.copy('_main.js', 'app/scripts/main.js');
+      this.copy('_Comment.jsx', 'app/scripts/templates/Comment.jsx');
+      this.copy('_CommentBox.jsx', 'app/scripts/templates/CommentBox.jsx');
+      this.copy('_CommentForm.jsx', 'app/scripts/templates/CommentForm.jsx');
+      this.copy('_CommentList.jsx', 'app/scripts/templates/CommentList.jsx');
+      this.copy('_skeleton.css', 'app/styles/skeleton.css');
+      this.copy('_normalize.css', 'app/styles/normalize.css');
 
-      /* if requirejs */
-      this.copy('_shirt.js', 'app/scripts/shirt.js');
-      this.copy('_logger.js', 'app/scripts/logger.js');
     }
   },
 

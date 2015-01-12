@@ -6,10 +6,11 @@
 
 Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date information on what we support.
 
+* React, A JavaScript library for building user interfaces
 * Built-in preview server with livereload
 * Automagically compile with either Sass or Less
 * Awesome image optimization
-* Module loading using either Require or Browserify
+* Module loading using CommonJs Browserify
 
 *For more information on what this generator can do for you, take a look at the [gulp plugins](app/templates/_package.json) used in our `package.json`.*
 
@@ -19,13 +20,6 @@ Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date informati
 - Install: `npm install -g generator-gulp-app`
 - Run: `yo gulp-app`
 - Run `gulp` for building to the `dist` directory and `gulp serve` for preview
-
-
-#### Third-Party Dependencies
-
-*(HTML/CSS/JS/Images/etc)*
-
-To install dependencies, run `bower install --save package-name` to get the files, then add a `script` or `style` tag to your `index.html` or another appropriate place.
 
 
 ## Options
@@ -41,13 +35,10 @@ To install dependencies, run `bower install --save package-name` to get the file
 
 [BSD license](http://opensource.org/licenses/bsd-license.php)
 
+![](app/templates/images/react.png)
 ![](app/templates/images/gulp.png)
 ![](app/templates/images/browserify.png)
-![](app/templates/images/require.png)
-![](app/templates/images/html.png)
 ![](app/templates/images/jquery.png)
 ![](app/templates/images/less.png)
 ![](app/templates/images/sass.png)
-![](app/templates/images/bootstrap.png)
-![](app/templates/images/modernizr.png)
 

@@ -1,27 +1,27 @@
 // main.js
+/** @jsx React.DOM */
 
 'use strict';
 
 console.log('\'Allo \'Allo!');
 
-<% if (moduleLoader === 'requirejs') { %>
-define(function (require) {
-    var logger = require('./logger');
-    logger.logTheShirt();
-});
-<% } %>
+var React = require('react'),
+    ExampleApp,
+    CommentList,
+    CommentForm, 
+    CommentBox,
+    Comment,
+    data;
 
-<% if (moduleLoader === 'browserify') { %>
+var data = [
+    {author: "James Martin", text: "This is one comment"},
+    {author: "Steven Iseki", text: "This is another comment"}
+];
 
-var _ = require('underscore');
-
-var _ = require('underscore'),
-  names = ['blue t-shirt', 'yellow t-shirt', 'green t-shirt'];
- 
-_.each(names, function(n) {
-	console.log(n);
-});
-
-<% } %>
+var CommentBox = require('./views/CommentBox.jsx')
 
 
+React.render(
+    <CommentBox data={data} />,
+    document.getElementById('app')
+);

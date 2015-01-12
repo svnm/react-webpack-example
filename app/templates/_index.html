@@ -1,159 +1,116 @@
-<!doctype html>
-<html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title><%= appname %></title>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-    <link rel="stylesheet" href="styles/main.css">
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted"><%= appname %></h3>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+
+      <div class="column">
+        <h4>Basic Page</h4>
+        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
       </div>
 
-      <div class="jumbotron">
+      <div class="column">
         <h1>'Allo, 'Allo!</h1>
         <p class="lead">Always a pleasure scaffolding your apps.</p>
         <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
       </div>
 
-      <div class="row marketing">
+      <div class="column">
+        <!-- React -->
+          <img src="images/react.png" />
+          <h4>React</h4>
+          <p>React is a JavaScript library for building user interfaces.</p>
+      </div>
 
-        <!-- html5 boilerplate -->
-        <div class="col-md-4 icon">
-          <img src="images/html.png" />
-        </div>
-        
-        <div class="col-md-8 text">
-            <h4>HTML5 Boilerplate</h4>
-            <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-        </div>
-
-        <!-- jQuery -->
-        <div class="col-md-4 icon">
-          <img src="images/jquery.png" />
-        </div>
-        
-        <div class="col-md-8 text">
-          <h4>jQuery</h4>
-          <p>The Write Less, Do More, JavaScript Library.</p>
-        </div>
-      
+      <div class="column">
         <!-- Gulp -->
-        <div class="col-md-4 icon">
           <img src="images/gulp.png" />
-        </div>
-      
-        <div class="col-md-8 text">
           <h4>Gulp</h4>
           <p>Speed. Efficiency. Simplicity. Gulp's use of streams and code-over-configuration makes for a simpler and more intuitive build.</p>
-        </div>
+      </div>
 
-        <!-- Bootstrap -->
-        <div class="col-md-4 icon">
-          <img src="images/bootstrap.png" />
-        </div>        
-      
-        <div class="col-md-8 text">
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-        </div>
+      <div class="column">
+      </div>
 
-        <!-- Modernizr -->
-        <div class="col-md-4 icon">
-          <img src="images/modernizr.png" />
-        </div>        
-      
-        <div class="col-md-8 text">
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-        </div>
+      <div class="column">
+        <!-- jQuery -->
+          <img src="images/jquery.png" />
+          <h4>jQuery</h4>
+          <p>The Write Less, Do More, JavaScript Library.</p>
+      </div>
 
-        <% if (cssFramework === 'SASS') { %>
+      <% if (cssFramework === 'SASS') { %>
+      <div class="column">
+
         <!-- Sass -->
-        <div class="col-md-4 icon">
           <img src="images/sass.png" />
-        </div>        
-      
-        <div class="col-md-8 text">
           <h4>Sass</h4>
           <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-        </div> <% } %>
+      </div> <% } %>
 
-        <% if (cssFramework === 'LESS') { %>
+      <% if (cssFramework === 'LESS') { %>
+      <div class="column">
         <!-- Less -->
-        <div class="col-md-4 icon">
           <img src="images/less.png" />
-        </div>
-        
-        <div class="col-md-8 text">
           <h4>LESS</h4>
           <p>Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.</p>
-        </div> <% } %>
+      </div> <% } %>
 
-        <% if (moduleLoader === 'requirejs') { %>
-        <!-- RequireJs -->        
-        <div class="col-md-4 icon">
-          <img src="images/require.png" />
-        </div>        
-        
-        <div class="col-md-8 text">
-          <h4>RequireJs</h4>
-          <p>RequireJS is a JavaScript file and module loader. Using a modular script loader like RequireJS will improve the speed and quality of your code.</p>
-        </div> <% } %>
-
-        <% if (moduleLoader === 'browserify') { %>
+      <div class="column">
         <!-- Browserify -->  
-        <div class="col-md-4 icon">
           <img src="images/browserify.png" />
-        </div>        
-        
-        <div class="col-md-8 text">
           <h4>Browserify</h4>
           <p>Browserify lets you require('modules') in the browser by bundling up all of your dependencies.</p>
-        </div> <% } %>
       </div>
 
 
       <div class="footer">
         <p>♥ from Steven Iseki and the Yeoman team</p>
       </div>
+
     </div>
+  </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
 
-    <% if (moduleLoader === 'requirejs') { %>
-      <script data-main="scripts/main" src="scripts/require.js"></script> -->
-    <% } %>
-
-    <% if (moduleLoader === 'browserify') { %>
-      <script src="scripts/browserify/main.js"></script>
-    <% } %>
-
-    <script src="scripts/modernizr.js"></script>
+    <script src="scripts/app.js"></script>
     <script src="scripts/jquery.js"></script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
+
 
   </body>
 </html>

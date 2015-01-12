@@ -20,9 +20,9 @@ var gulp = require('gulp'),
 
 /* browserify */ 
 gulp.task('browserify', function() {
+
   var sourceFile = './app/scripts/main.js',
-    destFolder = './app/scripts/browserify/',
-    destFile = 'main.js';
+    destFile = 'app.js';
 
   var bundler = browserify({
     entries: sourceFile,
@@ -34,13 +34,9 @@ gulp.task('browserify', function() {
       .bundle()
       .on('error', function () {})
       .pipe(source(destFile))
-      .pipe(gulp.dest(destFolder));
+      .pipe(gulp.dest("./app/scripts/"));
   };
 
-  if(global.isWatching) {
-    bundler = watchify(bundler);
-    bundler.on('update', bundle);
-  }
   return bundle();
 });
 
@@ -100,7 +96,6 @@ gulp.task('connect', ['styles'], function () {
   var app = connect()
     .use(require('connect-livereload')({port: 35729}))
     .use(serveStatic('app'))
-    .use('/bower_components', serveStatic('bower_components'))
     .use(serveIndex('app'));
 
   require('http').createServer(app)
@@ -112,29 +107,13 @@ gulp.task('connect', ['styles'], function () {
 
 /* serve */
 gulp.task('serve', ['watch'], function () {
-  <% if (moduleLoader === 'browserify') { %>
-    gulp.start('browserify'); <% } %>
-
-  require('opn')('http://localhost:9000');
+    gulp.start('browserify');
+    require('opn')('http://localhost:9000');
 });
 
-/* copy bower components */
-gulp.task('bower', function () {
-  var paths = {
-    js: [
-      'bower_components/modernizr/modernizr.js',
-      'bower_components/requirejs/require.js',
-      'bower_components/jquery/dist/jquery.js'
-    ]
-  }
-
-  gulp.src(paths.js)
-    .pipe(gulp.dest('app/scripts'));
-
-});
 
 /* watch */
-gulp.task('watch', ['connect', 'bower'], function () {
+gulp.task('watch', ['connect'], function () {
 
   livereload.listen();
 
@@ -151,14 +130,12 @@ gulp.task('watch', ['connect', 'bower'], function () {
   <% if (cssFramework === 'LESS') { %>
     gulp.watch('app/styles/**/*.less', ['styles']); <% } %>
 
-  <% if (moduleLoader === 'browserify') { %>
-    gulp.watch('app/scripts/**/*.js', ['browserify']); <% } %>
+    gulp.watch('app/scripts/**/*.js', ['browserify']);
 });
 
 /* build */
-gulp.task('build', ['images', 'styles','extras', 'bower'], function () {
-  <% if (moduleLoader === 'browserify') { %>
-    gulp.start('browserify'); <% } %>
+gulp.task('build', ['images', 'styles','extras'], function () {
+  gulp.start('browserify');
 
   /* app */
   gulp.src('app/**/*')
