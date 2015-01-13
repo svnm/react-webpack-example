@@ -112,14 +112,14 @@ module.exports = yeoman.generators.Base.extend({
     app: function () {
       this.mkdir('app');
       this.mkdir('app/scripts');
-      this.mkdir('app/scripts/templates');
+      this.mkdir('app/scripts/components');
       this.mkdir('app/styles');
       this.mkdir('app/fonts');
       this.copy('_main.js', 'app/scripts/main.js');
-      this.copy('_Comment.jsx', 'app/scripts/templates/Comment.jsx');
-      this.copy('_CommentBox.jsx', 'app/scripts/templates/CommentBox.jsx');
-      this.copy('_CommentForm.jsx', 'app/scripts/templates/CommentForm.jsx');
-      this.copy('_CommentList.jsx', 'app/scripts/templates/CommentList.jsx');
+      this.copy('_Comment.jsx', 'app/scripts/components/Comment.jsx');
+      this.copy('_CommentBox.jsx', 'app/scripts/components/CommentBox.jsx');
+      this.copy('_CommentForm.jsx', 'app/scripts/components/CommentForm.jsx');
+      this.copy('_CommentList.jsx', 'app/scripts/components/CommentList.jsx');
       this.copy('_skeleton.css', 'app/styles/skeleton.css');
       this.copy('_normalize.css', 'app/styles/normalize.css');
 

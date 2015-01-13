@@ -3,6 +3,7 @@ var gulp = require('gulp'),
   connect = require('connect'),
   livereload = require('gulp-livereload'),
   browserify = require('browserify'),
+  reactify = require('reactify'),
   watchify = require('watchify'),
   source = require('vinyl-source-stream'),
   less = require('gulp-less'),
@@ -21,23 +22,28 @@ var gulp = require('gulp'),
 /* browserify */ 
 gulp.task('browserify', function() {
 
-  var sourceFile = './app/scripts/main.js',
-    destFile = 'app.js';
-
   var bundler = browserify({
-    entries: sourceFile,
-    cache: {}, packageCache: {}, fullPaths: true, debug: true
-  });
+        entries: ['./app/scripts/main.js'], // Only need initial file, browserify finds the deps
+        transform: [reactify], // Convert JSX to normal javascript
+        debug: true, cache: {}, packageCache: {}, fullPaths: true
+    });
 
-  var bundle = function() {
-    return bundler
-      .bundle()
-      .on('error', function () {})
-      .pipe(source(destFile))
-      .pipe(gulp.dest("./app/scripts/"));
-  };
+    var watcher  = watchify(bundler);
 
-  return bundle();
+    return watcher
+    .on('update', function () { // When any files updates
+        var updateStart = Date.now();
+        console.log('Updating!');
+        watcher.bundle()
+        .pipe(source('app.js'))
+        // This is where you add uglifying etc.
+        .pipe(gulp.dest('./app/scripts/'));
+        console.log('Updated!', (Date.now() - updateStart) + 'ms');
+    })
+    .bundle() // Create the initial bundle when starting the task 
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('./app/scripts/'));
+
 });
 
 /* styles */
@@ -82,17 +88,9 @@ gulp.task('images', function () {
     .pipe(gulp.dest('dist/images'));
 });
 
-/* extras */
-gulp.task('extras', function () {
-  return gulp.src([
-    'node_modules/apache-server-configs/dist/.htaccess'
-  ], {
-    dot: true
-  }).pipe(gulp.dest('dist'));
-});
 
 /* connect */
-gulp.task('connect', ['styles'], function () {
+gulp.task('connect', ['styles', 'browserify'], function () {
   var app = connect()
     .use(require('connect-livereload')({port: 35729}))
     .use(serveStatic('app'))
@@ -107,7 +105,6 @@ gulp.task('connect', ['styles'], function () {
 
 /* serve */
 gulp.task('serve', ['watch'], function () {
-    gulp.start('browserify');
     require('opn')('http://localhost:9000');
 });
 
@@ -126,11 +123,8 @@ gulp.task('watch', ['connect'], function () {
 
   <% if (cssFramework === 'SASS') { %>
     gulp.watch('app/styles/**/*.scss', ['styles']); <% } %>
-
   <% if (cssFramework === 'LESS') { %>
     gulp.watch('app/styles/**/*.less', ['styles']); <% } %>
-
-    gulp.watch('app/scripts/**/*.js', ['browserify']);
 });
 
 /* build */
