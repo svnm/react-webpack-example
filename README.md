@@ -33,7 +33,7 @@ Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date informati
 
 ## License
 
-[BSD license](http://opensource.org/licenses/bsd-license.php)
+[MIT license](http://opensource.org/licenses/MIT)
 
 ![](app/templates/images/react.png)
 ![](app/templates/images/gulp.png)
@@ -41,4 +41,3 @@ Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date informati
 ![](app/templates/images/jquery.png)
 ![](app/templates/images/less.png)
 ![](app/templates/images/sass.png)
-
