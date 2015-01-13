@@ -30,7 +30,6 @@ describe('Gulp webapp generator test', function () {
 
   it('creates expected files', function (done) {
     var expected = [
-      'bower.json',
       'package.json',
       'gulpfile.js',
       'app/favicon.ico',
