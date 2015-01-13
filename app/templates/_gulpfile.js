@@ -43,8 +43,8 @@ gulp.task('browserify', function() {
     .bundle() // Create the initial bundle when starting the task 
     .pipe(source('app.js'))
     .pipe(gulp.dest('./app/scripts/'));
-
 });
+
 
 /* styles */
 gulp.task('styles', function () { 
@@ -70,6 +70,7 @@ gulp.task('styles', function () {
 
 });
 
+
 /* js hint */
 gulp.task('jshint', function () {
   return gulp.src('app/scripts/**/*.js')
@@ -77,6 +78,7 @@ gulp.task('jshint', function () {
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
 });
+
 
 /* images */
 gulp.task('images', function () {
@@ -103,6 +105,7 @@ gulp.task('connect', ['styles', 'browserify'], function () {
     });
 });
 
+
 /* serve */
 gulp.task('serve', ['watch'], function () {
     require('opn')('http://localhost:9000');
@@ -126,6 +129,7 @@ gulp.task('watch', ['connect'], function () {
   <% if (cssFramework === 'LESS') { %>
     gulp.watch('app/styles/**/*.less', ['styles']); <% } %>
 });
+
 
 /* build */
 gulp.task('build', ['images', 'styles','extras'], function () {

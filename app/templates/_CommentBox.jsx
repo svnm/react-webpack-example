@@ -11,7 +11,7 @@ module.exports = CommentBox = React.createClass({
  render: function() {
     return (
       <div className="commentBox">
-        <h1>Comments</h1>
+        <h4>Comments</h4>
         <CommentList data={this.props.data} />
         <CommentForm />
       </div>
