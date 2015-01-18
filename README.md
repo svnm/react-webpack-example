@@ -4,7 +4,7 @@
 
 ## Features
 
-Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date information on what we support.
+Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date information on what this generator supports.
 
 * React, A JavaScript library for building user interfaces
 * Built-in preview server with livereload
@@ -17,8 +17,8 @@ Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date informati
 
 ## Getting Started
 
-- Install: `npm install -g generator-gulp-app`
-- Run: `yo gulp-app`
+- Install: `npm install -g generator-gulp-react`
+- Run: `yo gulp-react`
 - Run `gulp` for building to the `dist` directory and `gulp serve` for preview
 
 
