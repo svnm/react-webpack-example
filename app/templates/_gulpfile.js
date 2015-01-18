@@ -132,7 +132,7 @@ gulp.task('watch', ['connect'], function () {
 
 
 /* build */
-gulp.task('build', ['images', 'styles','extras'], function () {
+gulp.task('build', ['images', 'styles'], function () {
   gulp.start('browserify');
 
   /* app */

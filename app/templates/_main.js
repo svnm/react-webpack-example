@@ -4,11 +4,12 @@
 'use strict';
 
 var data = [
-    {author: "James Martin", text: "This is one comment"},
-    {author: "Steven Iseki", text: "This is another comment"}
+    {author: "James Zeve Martin", text: "This is one comment"},
+    {author: "Steven Iseki Martin", text: "This is another comment"}
 ];
 
 var React = require('react');
+var jQuery = require('jquery');
 var CommentBox = require('./components/CommentBox.jsx')
 
 React.render(
