@@ -1,6 +1,6 @@
 {
   "name": "generator-gulp-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Scaffold out a front-end web app with Gulp, React, CSS Skeleton, Sass or Less and Browserify",
   "license": "BSD",
   "repository": "StevenIseki/generator-gulp-react",
