@@ -12,7 +12,6 @@ var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   cache = require('gulp-cache'),
   jshint = require('gulp-jshint'),
-  imagemin = require('gulp-imagemin'),
   uglify = require('gulp-uglify'),
   minifyHtml = require('gulp-minify-html'),
   size = require('gulp-size'),
@@ -80,17 +79,6 @@ gulp.task('jshint', function () {
 });
 
 
-/* images */
-gulp.task('images', function () {
-  return gulp.src('app/images/**/*')
-    .pipe(cache(imagemin({
-      progressive: true,
-      interlaced: true
-    })))
-    .pipe(gulp.dest('dist/images'));
-});
-
-
 /* connect */
 gulp.task('connect', ['styles', 'browserify'], function () {
   var app = connect()
@@ -132,7 +120,7 @@ gulp.task('watch', ['connect'], function () {
 
 
 /* build */
-gulp.task('build', ['images', 'styles'], function () {
+gulp.task('build', ['styles'], function () {
   gulp.start('browserify');
 
   /* app */
@@ -148,6 +136,6 @@ gulp.task('build', ['images', 'styles'], function () {
 });
 
 /* default */
-gulp.task('default', ['clean'], function () {
-  gulp.start('build');
+gulp.task('default', function () {
+  gulp.start('serve');
 });

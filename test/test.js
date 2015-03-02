@@ -4,14 +4,14 @@
 var path = require('path');
 var helpers = require('yeoman-generator').test;
 
-describe('Gulp webapp generator test', function () {
+describe('Gulp React generator test', function () {
   beforeEach(function (done) {
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
         return done(err);
       }
 
-      this.webapp = helpers.createGenerator('gulp-webapp:app', [
+      this.webapp = helpers.createGenerator('gulp-react:app', [
         '../../app', [
           helpers.createDummyGenerator(),
           'mocha:app'
@@ -24,7 +24,6 @@ describe('Gulp webapp generator test', function () {
   });
 
   it('the generator can be required without throwing', function () {
-    // not testing the actual run of generators yet
     this.app = require('../app');
   });
 
