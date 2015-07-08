@@ -1,7 +1,7 @@
 {
   "name": "generator-gulp-react",
   "version": "0.0.5",
-  "description": "Scaffold out a front-end web app with Gulp, React, CSS Skeleton, Sass or Less and Browserify",
+  "description": "Scaffold out a front-end web app with React and Gulp",
   "license": "MIT",
   "repository": "StevenIseki/generator-gulp-react",
   "author": "Steven Iseki",
@@ -22,6 +22,7 @@
     "gulp-react",
     "app",
     "react",
+    "react generator",
     "react.js",
     "Browserify",
     "modernizr",
