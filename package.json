@@ -1,6 +1,6 @@
 {
   "name": "generator-gulp-react",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Scaffold out a front-end web app with React and Gulp",
   "license": "MIT",
   "repository": "StevenIseki/generator-gulp-react",
