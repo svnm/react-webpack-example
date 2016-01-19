@@ -1,7 +1,7 @@
 {
-  "name": "css-module-example",
+  "name": "react-webpack-example",
   "version": "1.0.0",
-  "description": "just an example...",
+  "description": "just an example using react, webpack and css modules...",
   "scripts": {
     "start": "node serverDev.js"
   },
