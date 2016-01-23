@@ -9,7 +9,6 @@ just an example using react, webpack and css modules...
 * **webpack** `1.12.6`
 * **webpack-dev-middleware** `2.0.0`
 * **express** `4.13.3`
-* **jquery** `2.2.0`
 * **css skeleton** `2.0.4`
 * **css modules**
 
@@ -25,7 +24,6 @@ open http://127.0.0.1:3000
 ![](images/cssmodules.png)
 ![](images/skeleton.png)
 ![](images/webpack.png)
-![](images/jquery.png)
 
 ## License
 
