@@ -1,6 +1,6 @@
 {
-  "name": "react-webpack-example",
-  "version": "1.0.1",
+  "name": "react-css-modules-webpack-example",
+  "version": "1.0.0",
   "description": "just an example using react, webpack and css modules...",
   "scripts": {
     "build": "npm run clean && NODE_ENV=prod webpack",
@@ -9,9 +9,12 @@
     "test": "NODE_ENV=dev tape src/tests/index.js",
     "prod": "NODE_ENV=prod node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StevenIseki/react-webpack-example"
+  },
   "author": "Steven Iseki <stevenisekimartin@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/StevenIseki/pure-css",
   "dependencies": {
     "autoprefixer": "^6.3.6",
     "autoprefixer-loader": "^3.2.0",
