@@ -1,6 +1,6 @@
 {
   "name": "create-react-webpack-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Example using react, webpack and css modules...",
   "scripts": {
     "build": "npm run clean && NODE_ENV=prod webpack",
