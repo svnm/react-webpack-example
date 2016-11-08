@@ -1,7 +1,7 @@
 {
-  "name": "react-css-modules-webpack-example",
+  "name": "create-react-webpack-app",
   "version": "1.0.1",
-  "description": "just an example using react, webpack and css modules...",
+  "description": "Example using react, webpack and css modules...",
   "scripts": {
     "build": "npm run clean && NODE_ENV=prod webpack",
     "clean": "rm public/bundle.js && rm public/style.css && rm public/vendor.js || true",
