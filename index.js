@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Demo from './src/components/Demo'
 
-function App(props) {
+function App (props) {
   return (
     <main>
       <Demo />

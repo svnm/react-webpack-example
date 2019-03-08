@@ -1,3 +1,4 @@
+/*
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -20,57 +21,24 @@ function plugins() {
     new HtmlWebpackPlugin({ title: 'Example', template: './index.html' })
   ]
 }
+*/
 
-function loaders() {
-  return [
-    {
-      test: /\.js$/,
-      loader: 'babel', exclude: /node_modules/
-    },
-    {
-      test: /\.css$/i,
-      loader: ExtractTextPlugin.extract('style',
-        `css?modules&localIdentName=[name]_[local]__[hash:base64:5]!postcss`),
-    }
-  ]
-}
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-function entry() {
-  if(env === 'prod'){
-    return {
-      app: './index',
-      vendor: [ 'react', 'react-dom']
-    }
-  }
-  return { app: './index'}
-}
-
-function output() {
-  if(env === 'prod'){
-    return {
-      path: path.join(__dirname, 'public'),
-      filename: 'bundle.js',
-      publicPath: '/public/'
-    }
-  }
-  return {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
-    publicPath: '/'
-  }
-}
-
-var devtool = 'inline-source-map'
-
-if(env === 'prod'){ devtool = 'hidden-sourcemap' }
-
-/* config */
 module.exports = {
-  devtool: devtool,
-  entry: entry(),
-  output: output(),
-  module: { loaders: loaders() },
-  postcss: [ postcssCssnext({ browsers: ['last 2 versions'] }) ],
-  devServer: { historyApiFallback: true },
-  plugins: plugins()
+  entry: ['./index.js'],
+  devtool: 'inline-source-map',
+  output: { filename: 'bundle.js', publicPath: '' },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [ { loader: 'babel-loader', options: { presets: ['@babel/preset-env', '@babel/react'] } } ],
+        exclude: /node_modules/,
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ title: 'react webpack example', template: './index.html' })
+  ],
 }
