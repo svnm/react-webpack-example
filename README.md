@@ -3,7 +3,7 @@
 An extremely minimal example of using react, webpack and styled components in production with universal rendering and in development with live reloading...
 
 ![](images/react.png)
-![](images/styled.png)
+![](images/styled-components.png)
 ![](images/webpack.png)
 
 ## Dependencies
