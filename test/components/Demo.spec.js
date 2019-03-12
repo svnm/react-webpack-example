@@ -1,7 +1,7 @@
 import test from 'tape'
 import React from 'react'
 import { shallow } from 'enzyme'
-import Demo from '../../components/Demo'
+import Demo from '../../src/components/Demo'
 
 test('Demo component', (t) => {
   const component = shallow(<Demo />)

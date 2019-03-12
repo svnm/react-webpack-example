@@ -2,6 +2,8 @@
 
 An extremely minimal example of using react, webpack and styled components in production with universal rendering and in development with live reloading...
 
+Styled components server rendering setup inspired by Dennis Brotzky [guide-to-server-side-rendering-react-with-styled-components](https://medium.com/styled-components/the-simple-guide-to-server-side-rendering-react-with-styled-components-d31c6b2b8fbf)
+
 ![](images/react.png)
 ![](images/styled-components.png)
 ![](images/webpack.png)
@@ -19,18 +21,18 @@ An extremely minimal example of using react, webpack and styled components in pr
 
 ```
 yarn
-npm run dev
-open http://127.0.0.1:5000
+yarn dev
+open http://127.0.0.1:3000
 ```
 
-## Run Prod
+## Run Server
 
 * Universal server side rendering!
 
 ```
 yarn
-npm run build
-npm run prod
+yarn build
+yarn prod
 open http://127.0.0.1:3000
 ```
 
@@ -40,7 +42,7 @@ open http://127.0.0.1:3000
 
 ```
 yarn
-npm test
+yarn test
 ```
 
 ## License
