@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 function entry (options) {
   if (options.mode === 'production') {
