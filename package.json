@@ -1,6 +1,6 @@
 {
   "name": "react-webpack-example-app",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Example using react, webpack and styled components",
   "repository": {
     "type": "git",
